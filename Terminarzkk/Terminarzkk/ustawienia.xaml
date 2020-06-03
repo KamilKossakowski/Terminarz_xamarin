@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Terminarzkk.ustawienia">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="colLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#4060EA" />
+                <Setter Property="FontSize" Value="15" />
+            </Style>
+            <Style x:Key="bypod" TargetType="Button">
+                <Setter Property="TextColor" Value="WhiteSmoke" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="WidthRequest" Value="90" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="Black">
+            <Label  FontSize="Large" Text="Zmień adres e-mail" BackgroundColor="White" TextColor="Black" HorizontalTextAlignment="Center"/>
+            <Label Style="{StaticResource colLabel}" Text=" Login " HorizontalTextAlignment="Center"/>
+            <Entry x:Name="Newemail" Text="{Binding Nazwa}" BackgroundColor="White" TextColor="#4060EA" FontSize="15"/>
+            <Label Style="{StaticResource colLabel}" Text=" Password" HorizontalTextAlignment="Center"/>
+            <Entry x:Name="newpass" Text="{Binding Password}" BackgroundColor="White" TextColor="#4060EA" FontSize="15" IsPassword = "True"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="Zmień" BackgroundColor="Green" Style="{StaticResource bypod}" Clicked="OnZmienEmail"/>
+                <Button Text="Powrót" BackgroundColor="Red" Style="{StaticResource bypod}" Clicked="OnPowHome"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

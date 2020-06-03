@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Terminarzkk.Dokonajzmiany">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="colLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#4060EA" />
+                <Setter Property="FontSize" Value="15" />
+            </Style>
+            <Style x:Key="colentryl" TargetType="Entry">
+                <Setter Property="TextColor" Value="#4060EA" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+            <Style x:Key="bypod" TargetType="Button">
+                <Setter Property="TextColor" Value="WhiteSmoke" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="WidthRequest" Value="90" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView BackgroundColor="Black">
+    
+        <StackLayout Orientation="Vertical" BackgroundColor="#0000B6" Padding="5" Margin="10">
+            <StackLayout Orientation="Vertical" BackgroundColor="#000060" >
+                <Label Style="{StaticResource colLabel}" Text=" Nazwa: "/>
+                <Entry Style="{StaticResource colentryl}" x:Name="Lnazw" Text="{Binding Nazwa}"  />
+                <Label Style="{StaticResource colLabel}" Text=" Dnia: "/>
+                <Entry Style="{StaticResource colentryl}" x:Name="Lday" Text="{Binding Dzien}"  />
+                <Label Style="{StaticResource colLabel}" Text=" Miesiąca:"/>
+                <Entry Style="{StaticResource colentryl}" x:Name="Lmiesic" Text="{Binding Miesiac}" />
+                <Label Style="{StaticResource colLabel}" Text=" Roku:"/>
+                <Entry Style="{StaticResource colentryl}" x:Name="Lrok"   Text="{Binding Rok}"/>
+                <Label Style="{StaticResource colLabel}" Text=" O godzinie "/>
+                <Entry Style="{StaticResource colentryl}" x:Name="Lgodz"  Text="{Binding Godz}"/>
+                <Label Style="{StaticResource colLabel}" Text=" Miejsce: "/>
+                <Entry Style="{StaticResource colentryl}" x:Name="Lgdz"  Text="{Binding Gdzie}"/>
+                <Label Style="{StaticResource colLabel}" Text=" Uwagi= "/>
+                <Entry Style="{StaticResource colentryl}" x:Name="Luwagi"  Text="{Binding Uwagi}"/>
+            </StackLayout>
+        
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="Zapisz" BackgroundColor="Green" Style="{StaticResource bypod}" Clicked="OnZmienwydrzenie"/>
+                <Button Text="Powrót" BackgroundColor="Red" Style="{StaticResource bypod}" Clicked="OnPowHome"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

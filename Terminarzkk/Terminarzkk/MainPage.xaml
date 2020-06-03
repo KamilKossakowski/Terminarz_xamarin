@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Terminarzkk.MainPage"
+             NavigationPage.HasNavigationBar="False"
+              >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="colLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#4060EA" />
+                <Setter Property="FontSize" Value="15" />
+            </Style>
+            <Style x:Key="bypod" TargetType="Button">
+                <Setter Property="TextColor" Value="WhiteSmoke" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="WidthRequest" Value="90" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout Orientation="Vertical" BackgroundColor="Black">
+        <Label FontSize="Large" Text="Bierzące wydarzenia" BackgroundColor="White" TextColor="Black" HorizontalTextAlignment="Center"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Dodaj" BackgroundColor="Orange" Style="{StaticResource bypod}" Clicked="OndokonajZmian"/>
+            <Button Text="Ustawienia" BackgroundColor="Orange" Style="{StaticResource bypod}" Clicked="OnUstawEmail"/>
+        </StackLayout>
+        <ListView x:Name="MainListView" 
+            HasUnevenRows="True" CachingStrategy="RecycleElementAndDataTemplate" ItemTapped="OnTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                        <StackLayout Orientation="Vertical" BackgroundColor="#0000B6" Padding="5" Margin="10">
+                            <StackLayout Orientation="Horizontal" BackgroundColor="#000060" >
+                                <Label Style="{StaticResource colLabel}" Text=" Dnia "/>
+                                <Label Style="{StaticResource colLabel}" Text="{Binding Dzien}" />
+                                <Label Style="{StaticResource colLabel}" Text="-"/>
+                                <Label Style="{StaticResource colLabel}" Text="{Binding Miesiac}" />
+                                <Label Style="{StaticResource colLabel}" Text="-"/>
+                                <Label Style="{StaticResource colLabel}" Text="{Binding Rok}" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" BackgroundColor="#000060" >
+                                <Label Style="{StaticResource colLabel}" Text=" O godzinie "/>
+                                <Label Style="{StaticResource colLabel}" Text="{Binding Godz} "/>
+                            </StackLayout>
+                            <Label Style="{StaticResource colLabel}" FontSize="33" Text="{Binding Nazwa}" />
+                           
+                         </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    </StackLayout>
+</ContentPage>
